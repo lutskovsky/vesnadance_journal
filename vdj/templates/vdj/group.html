@@ -1,0 +1,9 @@
+{% if lessons %}
+    <table>
+    {% for lesson in lessons %}
+        <tr><td>{{lesson.date|date:"d.m.Y"}}</td><td>{{lesson.rent}}</td><td></td><td></td></tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No data.</p>
+{% endif %}

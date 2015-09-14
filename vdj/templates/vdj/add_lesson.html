@@ -1,0 +1,30 @@
+<html>
+<head>
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/redmond/jquery-ui.css" rel="Stylesheet" />
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+
+</head>
+
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<div class="container">
+<h1>Добавить занятие</h1>
+<form action="{% url 'add_lesson' %}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            {% bootstrap_icon "star" %} Добавить
+        </button>
+    {% endbuttons %}
+</form>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $("#id_date").datepicker();
+  });
+</script>
+</html>
